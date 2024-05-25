@@ -74,6 +74,7 @@ export class AppComponent implements OnInit {
   }
   async getData() {
     this.isLoading = true;
+    this.listData=[];
     let inputSort =
       (this.detail.sortOrder == 'za' ? '-' : '') + this.detail.sortValue;
     try {

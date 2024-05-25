@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="listData">
-    <ng-container *ngIf="listData.length>0 && !isLoading; else loading">
+    <ng-container *ngIf="listData.length>0; else loading">
       <div class="row header-row">
         <label class="c-10">Number</label>
         <label class="c-10">Name</label>
@@ -62,78 +62,67 @@
   </div>
   <div *ngIf="showPopup" class="popup">
     <div *ngIf="isLoading==false; else loading" class="popup__detail">
+      <button class="popup__button" (click)="closeInfo()">X</button>
       <img  [src]="image" alt="nothing" />
-      <div class="row">
-        <label for="a">Id:</label>
-        <span>{{ showItem?.id }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Number:</label>
-        <span>{{ showItem?.number }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Name:</label>
-        <span>{{ showItem?.name }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Type 1:</label>
-        <span>{{ showItem?.type_1 }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Type 2:</label>
-        <span>{{ showItem?.type_2 }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Total:</label>
-        <span>{{ showItem?.total }}</span>
-      </div>
-      <div class="row">
-        <label for="a">HP:</label>
-        <span>{{ showItem?.hp }}</span>
-      </div>
-      <div class="row">
-        <label for="a">HP:</label>
-        <span>{{ showItem?.hp }}</span>
-      </div>
-      <div class="row">
-        <label for="a">HP:</label>
-        <span>{{ showItem?.hp }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Attack:</label>
-        <span>{{ showItem?.attack }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Defense:</label>
-        <span>{{ showItem?.defense }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Sp_atk:</label>
-        <span>{{ showItem?.sp_atk }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Sp_def:</label>
-        <span>{{ showItem?.sp_def }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Speed:</label>
-        <span>{{ showItem?.speed }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Generation:</label>
-        <span>{{ showItem?.generation }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Legendary:</label>
-        <span>{{ showItem?.legendary }}</span>
-      </div>
-      <div class="row">
-        <label for="a">Legendary:</label>
-        <span>{{ showItem?.legendary }}</span>
+      <div class="popup__detail-scroll">
+        <div class="row">
+          <label for="a">Id:</label>
+          <span>{{ showItem?.id }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Number:</label>
+          <span>{{ showItem?.number }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Name:</label>
+          <span>{{ showItem?.name }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Type 1:</label>
+          <span>{{ showItem?.type_1 }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Type 2:</label>
+          <span>{{ showItem?.type_2 }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Total:</label>
+          <span>{{ showItem?.total }}</span>
+        </div>
+        <div class="row">
+          <label for="a">HP:</label>
+          <span>{{ showItem?.hp }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Attack:</label>
+          <span>{{ showItem?.attack }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Defense:</label>
+          <span>{{ showItem?.defense }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Sp_atk:</label>
+          <span>{{ showItem?.sp_atk }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Sp_def:</label>
+          <span>{{ showItem?.sp_def }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Speed:</label>
+          <span>{{ showItem?.speed }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Generation:</label>
+          <span>{{ showItem?.generation }}</span>
+        </div>
+        <div class="row">
+          <label for="a">Legendary:</label>
+          <span>{{ showItem?.legendary }}</span>
+        </div>
       </div>
       
-
-      <button class="popup__button" (click)="closeInfo()">Close</button>
     </div>
   </div>
   <ng-template #loading>
